@@ -62,9 +62,10 @@ pytest tests.py --cov=Automatons
 
 ## 📝 Usage Example
 
+### Create a DFA
+```py
 from Automatons import DFA, NFA
 
-# Create a DFA
 dfa = DFA()
 dfa._name = "example_dfa"
 dfa.add_state("q0", starting=True)
@@ -73,14 +74,40 @@ dfa.add_state("q2", accepting=True)
 dfa.add_transition("q0", "q1", "a")
 dfa.add_transition("q1", "q2", "b")
 
-# Test words
-dfa.simulate(["ab", "abc", "ba"])
+dfa. ...
+```
 
-# Visualize
-dfa.visualize()  # Creates PNG in result_images/
+### Test words
+`dfa.simulate(["ab", "abc", "ba"])`
 
-# Export to JSON
-dfa.export_to_json("jsons/example_dfa.json")
+### Visualize
+`dfa.visualize()  # Creates PNG in result_images/`
+
+### Export to JSON
+`dfa.export_to_json("jsons/example_dfa.json")`
+
+## 🖥 Import JSON example
+
+```json
+{
+  "name": "DFA Ends with 'ab'",                     
+  "states": [ "q0", "q1", "q2", "q3" ],
+  "alphabet": [ "a", "b" ],
+  "start_state": "q0",
+  "accept_states": [ "q2" ],
+  "transitions": [
+    { "from": "q0", "to": "q1", "symbol": "a" },
+    { "from": "q0", "to": "q3", "symbol": "b" },
+    { "from": "q1", "to": "q2", "symbol": "b" },
+    { "from": "q1", "to": "q1", "symbol": "a" },
+    { "from": "q2", "to": "q1", "symbol": "a" },
+    { "from": "q2", "to": "q3", "symbol": "b" },
+    { "from": "q3", "to": "q1", "symbol": "a" },
+    { "from": "q3", "to": "q3", "symbol": "b" }
+  ],
+  "test_words": [ "ab", "aab", "bab", "aaab", "babab", "abb", "baab", "bbaab", "aba", "ba", "baba", "a", "b", "" ]
+}
+```
 
 ## 📁 Project Structure
 

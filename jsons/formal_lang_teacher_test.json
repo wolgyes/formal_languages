@@ -1,0 +1,24 @@
+{
+  "name": "Example 2.15 DFA",
+  "states": [ "q0", "q1", "q2", "q3", "q4" ],
+  "alphabet": [ "0", "1" ],
+  "start_state": "q0",
+  "accept_states": [ "q2", "q4" ],
+  "transitions": [
+    { "from": "q0", "to": "q1", "symbol": "0" },
+    { "from": "q0", "to": "q3", "symbol": "1" },
+
+    { "from": "q1", "to": "q4", "symbol": "1" },
+    { "from": "q1", "to": "q2", "symbol": "0" },
+
+    { "from": "q2", "to": "q4", "symbol": "1" },
+    { "from": "q2", "to": "q1", "symbol": "0" },
+
+    { "from": "q3", "to": "q2", "symbol": "0" },
+    { "from": "q3", "to": "q4", "symbol": "1" },
+
+    { "from": "q4", "to": "q4", "symbol": "0" },
+    { "from": "q4", "to": "q4", "symbol": "1" }
+  ],
+  "test_words": [ "0", "1", "00", "01", "10", "11", "000", "001", "010", "011", "100", "101", "110", "111" ]
+}

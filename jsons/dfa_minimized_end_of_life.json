@@ -1,0 +1,60 @@
+{
+  "name": "Example 2.15 DFA_minimized",
+  "states": [
+    "q3",
+    "q0",
+    "q2",
+    "q1"
+  ],
+  "alphabet": [
+    "1",
+    "0"
+  ],
+  "start_state": "q3",
+  "accept_states": [
+    "q0",
+    "q1"
+  ],
+  "transitions": [
+    {
+      "from": "q3",
+      "to": "q2",
+      "symbol": "0"
+    },
+    {
+      "from": "q3",
+      "to": "q2",
+      "symbol": "1"
+    },
+    {
+      "from": "q2",
+      "to": "q0",
+      "symbol": "1"
+    },
+    {
+      "from": "q2",
+      "to": "q1",
+      "symbol": "0"
+    },
+    {
+      "from": "q1",
+      "to": "q0",
+      "symbol": "1"
+    },
+    {
+      "from": "q1",
+      "to": "q2",
+      "symbol": "0"
+    },
+    {
+      "from": "q0",
+      "to": "q0",
+      "symbol": "0"
+    },
+    {
+      "from": "q0",
+      "to": "q0",
+      "symbol": "1"
+    }
+  ]
+}

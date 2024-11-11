@@ -1,0 +1,18 @@
+{
+  "name": "DFA Ends with 'ab'",
+  "states": [ "q0", "q1", "q2", "q3" ],
+  "alphabet": [ "a", "b" ],
+  "start_state": "q0",
+  "accept_states": [ "q2" ],
+  "transitions": [
+    { "from": "q0", "to": "q1", "symbol": "a" },
+    { "from": "q0", "to": "q3", "symbol": "b" },
+    { "from": "q1", "to": "q2", "symbol": "b" },
+    { "from": "q1", "to": "q1", "symbol": "a" },
+    { "from": "q2", "to": "q1", "symbol": "a" },
+    { "from": "q2", "to": "q3", "symbol": "b" },
+    { "from": "q3", "to": "q1", "symbol": "a" },
+    { "from": "q3", "to": "q3", "symbol": "b" }
+  ],
+  "test_words": [ "ab", "aab", "bab", "aaab", "babab", "abb", "baab", "bbaab", "aba", "ba", "baba", "a", "b", "" ]
+}
